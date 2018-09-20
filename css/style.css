@@ -1,0 +1,124 @@
+/* index */
+
+      html, body { font-family: Arial, Helvetica, sans-serif; }
+
+      :root { --dropdownmenu-width: 150px; }
+      ul { list-style: none; margin: 0; padding: 0; width: 100%; background-color: #333;}
+      li { float: left; }
+      li a { display: block; color: white; text-align: center; padding: 10px 10px; text-decoration: none; }
+      li a:hover:not(.active) { background-color: lightgrey; color: #333; }
+       
+      .active { background-color: #4CAF50; }
+      .inactive { background-color: #333;}
+      .icon { display: none; }      
+      table { border: 1px solid black; border-collapse: collapse; }
+
+      #mainul, #sub { overflow: hidden; }
+
+      /* General Menu Styling */
+      .dropdown, .subs, .hassubs .hassubs .dropdown, .hassubs .hassubs .dropdown .subs { width: var(--dropdownmenu-width); }
+
+      .dropdown { position: absolute; top: 40px; opacity: 0; visibility: hidden; transition: ease-out .35s;-moz-transition: ease-out .35s;-webkit-transition: ease-out .35s; }
+/*
+      .mainnav li:first-child{border: none; }
+      .mainnav li a{ display: block;padding: 2px 20px;color: #fff;font-family: arial;}
+      .mainnav li:hover{background: #fff;transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+      .mainnav li:hover a{color: maroon;transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+*/
+
+      /* First Level */
+      .subs {left: -0px; position: relative; top: 0px; border-left: none !important; border-bottom: 1px dotted #fff !important;}
+      .subs:last-child {border: none !important;}
+      .hassubs:hover .dropdown,.hassubs .hassubs:hover .dropdown{opacity: 1;visibility: visible; transition: ease-in .35s;-moz-transition: ease-in .35s;-webkit-transition: ease-in .35s;}
+      .mainnav li:hover ul a,.mainnav li:hover ul li ul li a{color: white;}
+      .mainnav li ul li:hover,.mainnav li ul li ul li:hover{background: #fff;transition: ease-in-out .35s;-moz-transition: ease-in-out .35s;-webkit-transition: ease-in-out .35s;}
+      .mainnav li ul li:hover a,.mainnav li ul li ul li:hover a{color: black;transition: ease-in-out .35s;-moz-transition: ease-in-out .35s;-webkit-transition: ease-in-out .35s;}
+      /* Second Level */
+      .hassubs .hassubs .dropdown .subs {left: -0px; position: relative; top: 0px;}
+      .hassubs .hassubs .dropdown { position: absolute; left: var(--dropdownmenu-width); top: 0px;opacity: 0;visibility: hidden;transition: ease-out .35s;-moz-transition: ease-out .35s;-webkit-transition: ease-out .35s;}
+
+      @media screen and (max-width: 600px) {
+        ul { list-style-type: none; margin: 0; padding: 0; }
+        li a:not( .icon) { display: none; }
+        li a.active { display: block; }
+        .icon { display: block; }      
+      }
+
+
+
+
+
+      .mainbody { width: 80%; border-style: dotted; border-radius: 5px;  background: #dddddd; }
+
+      input[type="text"], input[type="date"], button, select {  border: none; border-bottom: solid black;  font-size: 15px; margin-bottom: 10px; border-radius: 5px; width: 200px; margin-left: 5%; }
+      ::placeholder { font-family: inherit; }
+      textarea { font-family: inherit; font-size: 15px; margin-bottom: 10px; border-radius: 5px; width: 200px; margin-left: 5%; height: 100px;}
+      input[type="text"]:read-only, input[type="date"]:read-only, textarea:read-only { background-color: lightgrey; }
+      input[type="text"]:-moz-read-only, input[type="date"]:-moz-read-only, textarea:-moz-read-only { background-color: lightgrey; }
+      input[type="text"] { border: none; border-bottom: solid black; }
+      input:focus { border-bottom: solid red; } 
+      span { font-size: 20px; margin-bottom: 10px; } 
+
+input[type="text"]::-ms-clear { color: red; }
+
+
+
+
+
+      @media print{
+        body { background-color:#FFFFFF; background-image:none; color:#000000 }
+        #ad { display:none;}
+        #leftbar { display:none;}
+        #contentarea { width:100%;}
+      }
+
+label { float: left; width: 80px; margin-left: 5px;}
+
+/* Center the image and position the close button */
+.imgcontainer { text-align: center; margin: 24px 0 12px 0; position: relative; }
+
+.container { padding: 16px; }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.close { position: absolute; right: 20px; top: -15px; color: #000; font-size: 35px; font-weight: bold; }
+.close:hover, .close:focus { color: red; cursor: pointer; }
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate { -webkit-animation: animatezoom 0.6s; animation: animatezoom 0.6s }
+
+@-webkit-keyframes animatezoom { 
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+
+
+

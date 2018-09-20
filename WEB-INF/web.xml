@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>free pages</web-resource-name>
+    <url-pattern>/css/*</url-pattern>
+    <url-pattern>/image/*</url-pattern>
+    <url-pattern>/script/*</url-pattern>
+  </web-resource-collection>
+</security-constraint>
+
+
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Entire Application</web-resource-name>
+
+      <url-pattern>/*</url-pattern>
+
+    </web-resource-collection>
+ 
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+
+   <auth-constraint>
+      <role-name>tomcat</role-name>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
+
+
+
+
+  <security-role>
+    <role-name>tomcat</role-name>
+    <role-name>user</role-name>
+  </security-role>
+<!--
+  <login-config>
+    <auth-method>BASIC</auth-method>
+  </login-config>
+-->
+
+  <login-config>
+      <auth-method>FORM</auth-method>
+      <realm-name>test</realm-name>
+      <form-login-config>
+        <form-login-page>/login.jsp</form-login-page>
+        <form-error-page>/logout.jsp?msg=Login failed</form-error-page>
+      </form-login-config>
+  </login-config>
+
+
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+</web-app>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+<script>
+
+ajax = function (d) {
+  fetch ("inputcleardemo.html").then(function(response) {
+    response.text().then(function(text) {
+      document.getElementById (d).innerHTML = text;
+    });
+  });
+}
+
+</script>
+</head>
+<body onload="ajax ('div1')">
+<div id="div1">123</div>
+
+<script>
+
+</script>
+
+</body>
